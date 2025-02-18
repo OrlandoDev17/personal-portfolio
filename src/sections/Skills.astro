@@ -1,0 +1,15 @@
+---
+import SectionContainer from '../components/SectionContainer.astro';
+import SkillCard from '../components/SkillCard.astro';
+---
+
+<SectionContainer id="skills" className="p-8">
+  <h2 class="text-center text-5xl text-primary font-semibold tracking-wide">
+    Habilidades <span class="text-violet-700">Técnicas</span>
+  </h2>
+  <main class="flex mt-10 justify-center gap-8 flex-wrap">
+    <SkillCard />
+    <SkillCard />
+    <SkillCard />
+  </main>
+</SectionContainer>
