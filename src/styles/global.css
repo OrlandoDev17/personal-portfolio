@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #222;
+
+  --color-black-haze-50: #f7f7f7;
+  --color-black-haze-100: #efefef;
+  --color-black-haze-200: #dcdcdc;
+  --color-black-haze-300: #bdbdbd;
+  --color-black-haze-400: #989898;
+  --color-black-haze-500: #7c7c7c;
+  --color-black-haze-600: #656565;
+  --color-black-haze-700: #525252;
+  --color-black-haze-800: #464646;
+  --color-black-haze-900: #3d3d3d;
+  --color-black-haze-950: #292929;
+
+  --font-montserrat: 'Montserrat Variable', sans-serif;
+
+  --background-image-hero: url('./images/background.jpg');
+}
