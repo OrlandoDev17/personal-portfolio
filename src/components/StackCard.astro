@@ -13,6 +13,7 @@ import VercelIcon from '../icons/Vercel.astro';
 import NodeJsIcon from '../icons/NodeJs.astro';
 import NextJsIcon from '../icons/NextJs.astro';
 import PythonIcon from '../icons/Python.astro';
+import MySqlIcon from '../icons/MySql.astro';
 
 const TECHS = {
   REACT: {
@@ -71,6 +72,10 @@ const TECHS = {
     name: 'Python',
     icon: PythonIcon,
   },
+  MYSQL: {
+    name: 'MySql',
+    icon: MySqlIcon,
+  },
 };
 
 const STACKS = [
@@ -91,19 +96,22 @@ const STACKS = [
   },
   {
     title: 'Aprendiendo',
-    techs: [TECHS.NODEJS, TECHS.NEXTJS, TECHS.PYTHON],
+    techs: [TECHS.NODEJS, TECHS.NEXTJS, TECHS.PYTHON, TECHS.MYSQL],
   },
 ];
 ---
 
 {
   STACKS.map(({ title, techs }) => (
-    <article class="bg-neutral-500">
-      <h2>{title}</h2>
-      <ul class="flex">
+    <article class="bg-black-haze-300 size-75 p-4 flex flex-col items-center shadow-xl rounded-xl">
+      <h2 class="text-3xl text-violet-700 mb-4 font-bold font-montserrat">
+        {title}
+      </h2>
+      <ul class="flex flex-wrap justify-center gap-4">
         {techs.map((tech) => (
-          <li>
+          <li class="flex flex-col items-center gap-2 text-primary text-xl">
             <tech.icon class="size-15" />
+            {tech.name}
           </li>
         ))}
       </ul>
