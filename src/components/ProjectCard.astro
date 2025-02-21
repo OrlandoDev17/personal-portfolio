@@ -1,0 +1,112 @@
+---
+import ReactIcon from '../icons/React.astro';
+import TailwindIcon from '../icons/Tailwind.astro';
+import AstroIcon from '../icons/AstroBuild.astro';
+import TypescriptIcon from '../icons/Typescript.astro';
+import VSCodeIcon from '../icons/VSCode.astro';
+import JavascriptIcon from '../icons/Javascript.astro';
+import FigmaIcon from '../icons/Figma.astro';
+import GitIcon from '../icons/Git.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import VercelIcon from '../icons/Vercel.astro';
+
+const TAGS = {
+  REACT: {
+    name: 'React',
+    icon: ReactIcon,
+  },
+  TAILWIND: {
+    name: 'Tailwind Css',
+    icon: TailwindIcon,
+  },
+  ASTRO: {
+    name: 'Astro',
+    icon: AstroIcon,
+  },
+  TYPESCRIPT: {
+    name: 'TypeScript',
+    icon: TypescriptIcon,
+  },
+  JAVASCRIPT: {
+    name: 'JavaScript',
+    icon: JavascriptIcon,
+  },
+  VSCODE: {
+    name: 'VS Code',
+    icon: VSCodeIcon,
+  },
+  FIGMA: {
+    name: 'Figma',
+    icon: FigmaIcon,
+  },
+  GIT: {
+    name: 'Git',
+    icon: GitIcon,
+  },
+  GITHUB: {
+    name: 'GitHub',
+    icon: GitHubIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: 'SneakerStore | La Mejor tienda online de venta de de Sneakers',
+    description: 'Pagina Web de E Commerce | Venta de Sneakers',
+    link: 'https://e-commerce-web-eight-gules.vercel.app/',
+    github: 'https://github.com/OrlandoDev17/e-commerce-web',
+    image: './projects/sneakerstore.webp',
+    tags: [
+      TAGS.ASTRO,
+      TAGS.REACT,
+      TAGS.TAILWIND,
+      TAGS.JAVASCRIPT,
+      TAGS.TYPESCRIPT,
+      TAGS.GIT,
+      TAGS.GITHUB,
+      TAGS.VSCODE,
+    ],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, link, github, image, tags }) => (
+    <article class="flex flex-col mt-10 items-center">
+      <h3 class="text-2xl text-violet-700 mb-2 font-bold font-montserrat">
+        {title}
+      </h3>
+      <p class="text-primary text-xl font-montserrat mb-4">{description}</p>
+      {/* <h3 class="mt-6 text-primary text-2xl font-semibold tracking-wide">
+        Tecnologías <span class="text-violet-700">Usadas</span>
+      </h3> */}
+      <ul class="flex flex-wrap justify-center gap-2 mb-4">
+        {tags.map((tag) => (
+          <li class="flex bg-primary text-white justify-center items-center px-3 py-2 rounded-4xl gap-x-2 text-xl">
+            <tag.icon class="size-8" />
+            {tag.name}
+          </li>
+        ))}
+      </ul>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <img
+          class="w-220 rounded-xl shadow-2xl"
+          src={image}
+          alt={`Captura de pantalla del proyecto: ${title}`}
+        />
+      </a>
+      <aside class="mt-6 flex gap-x-8">
+        <button class="bg-primary p-3 rounded-2xl text-xl hover:bg-violet-700 hover:scale-110 transition">
+          <a href={github} target="_blank" rel="noopener noreferrer">
+            <GitHubIcon class="size-10" />
+          </a>
+        </button>
+        <button class="bg-primary p-3 rounded-2xl text-xl hover:bg-violet-700 hover:scale-110 transition">
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <VercelIcon class="size-10" />
+          </a>
+        </button>
+      </aside>
+    </article>
+  ))
+}
