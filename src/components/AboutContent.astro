@@ -1,3 +1,7 @@
+---
+import SectionTitle from './SectionTitle.astro';
+---
+
 <div
   class="flex flex-col justify-center items-center lg:flex-row lg:justify-around gap-8 mx-8"
 >
@@ -14,9 +18,9 @@
     </button>
   </div>
   <article class="w-200 text-wrap flex-wrap flex flex-col gap-y-8">
-    <h2 class="text-6xl text-center text-primary tracking-wide font-semibold">
+    <SectionTitle className="text-6xl">
       Sobre <span class="text-violet-700">Mí</span>
-    </h2>
+    </SectionTitle>
     <p class="text-xl text-primary text-justify font-montserrat">
       <strong class="text-violet-700">¡Hola! Soy Orlando López</strong>, un
       desarrollador front-end junior de 18 años con una gran pasión por crear
