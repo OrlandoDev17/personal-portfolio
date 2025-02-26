@@ -1,7 +1,15 @@
 ---
+import ContactForm from '../components/ContactForm.astro';
+import ContactInfo from '../components/ContactInfo.astro';
 import SectionTitle from '../components/SectionTitle.astro';
+import Copyright from '../components/Copy.astro';
 ---
 
-<footer class="min-h-screen bg-black-haze-100 p-8" id="contact">
+<footer class="min-h-auto bg-black-haze-100 p-28" id="contact">
   <SectionTitle>Mí <span class="text-violet-700">Contacto</span></SectionTitle>
+  <main class="flex justify-center gap-128 pt-12">
+    <ContactInfo />
+    <ContactForm />
+  </main>
+  <Copyright />
 </footer>

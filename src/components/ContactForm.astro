@@ -1,0 +1,48 @@
+---
+const formFields = [
+  { id: 'name', label: 'Nombre', type: 'text', required: true },
+  { id: 'email', label: 'Email', type: 'email', required: true },
+  { id: 'message', label: 'Mensaje', type: 'textarea', required: true },
+];
+---
+
+<form
+  class="border-primary/60 border-2 rounded-2xl p-6 flex flex-col space-y-4 bg-white shadow-xl"
+  action="/api/contact"
+  method="post"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {
+      formFields.slice(0, 2).map(({ id, label, required }) => (
+        <div class="flex flex-col space-y-2">
+          <label class="text-xl font-montserrat font-semibold" for={id}>
+            {label}
+          </label>
+          <input
+            class="border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-violet-700"
+            id={id}
+            name={id}
+            required={required}
+          />
+        </div>
+      ))
+    }
+  </div>
+  <div class="flex flex-col space-y-2">
+    <label class="text-xl font-montserrat font-semibold" for="message"
+      >Mensaje</label
+    >
+    <textarea
+      class="border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-violet-700"
+      id="message"
+      name="message"
+      required></textarea>
+  </div>
+  <button
+    class="bg-white text-primary border-2 border-violet-700 rounded-lg p-2 mt-4 cursor-pointer text-2xl
+    hover:bg-violet-700 hover:text-white hover:scale-105 transition"
+    type="submit"
+  >
+    Enviar
+  </button>
+</form>

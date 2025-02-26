@@ -1,0 +1,40 @@
+---
+import GitHubIcon from '../icons/GitHub.astro';
+import LinkedInIcon from '../icons/LinkedIn.astro';
+import WhatsappIcon from '../icons/Whatsapp.astro';
+import MailIcon from '../icons/Mail.astro';
+
+const SOCIALMEDIAS = [
+  {
+    icon: GitHubIcon,
+    link: 'https://github.com/OrlandoDev17',
+  },
+  {
+    icon: LinkedInIcon,
+    link: 'https://www.linkedin.com/in/orlando-lópez1707',
+  },
+  {
+    icon: WhatsappIcon,
+    link: 'https://wa.me/584242860846',
+  },
+  {
+    icon: MailIcon,
+    link: 'mailto:orlandodev1707@gmail.com',
+  },
+];
+---
+
+<div class="flex items-center justify-center space-x-4 mt-2">
+  {
+    SOCIALMEDIAS.map(({ icon: Icon, link }) => (
+      <a
+        class="border-2 border-violet-700 rounded-full p-2 text-violet-700 hover:bg-violet-700 hover:text-white hover:scale-110 transition"
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon class="size-10" />
+      </a>
+    ))
+  }
+</div>

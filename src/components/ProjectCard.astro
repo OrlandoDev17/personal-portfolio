@@ -8,7 +8,7 @@ import JavascriptIcon from '../icons/Javascript.astro';
 import FigmaIcon from '../icons/Figma.astro';
 import GitIcon from '../icons/Git.astro';
 import GitHubIcon from '../icons/GitHub.astro';
-import VercelIcon from '../icons/Vercel.astro';
+import RocketIcon from '../icons/Rocket.astro';
 
 const TAGS = {
   REACT: {
@@ -23,29 +23,13 @@ const TAGS = {
     name: 'Astro',
     icon: AstroIcon,
   },
-  TYPESCRIPT: {
-    name: 'TypeScript',
-    icon: TypescriptIcon,
-  },
   JAVASCRIPT: {
     name: 'JavaScript',
     icon: JavascriptIcon,
   },
-  VSCODE: {
-    name: 'VS Code',
-    icon: VSCodeIcon,
-  },
-  FIGMA: {
-    name: 'Figma',
-    icon: FigmaIcon,
-  },
   GIT: {
     name: 'Git',
     icon: GitIcon,
-  },
-  GITHUB: {
-    name: 'GitHub',
-    icon: GitHubIcon,
   },
 };
 
@@ -56,16 +40,7 @@ const PROJECTS = [
     link: 'https://e-commerce-web-eight-gules.vercel.app/',
     github: 'https://github.com/OrlandoDev17/e-commerce-web',
     image: './projects/sneakerstore.webp',
-    tags: [
-      TAGS.ASTRO,
-      TAGS.REACT,
-      TAGS.TAILWIND,
-      TAGS.JAVASCRIPT,
-      TAGS.TYPESCRIPT,
-      TAGS.GIT,
-      TAGS.GITHUB,
-      TAGS.VSCODE,
-    ],
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND, TAGS.JAVASCRIPT, TAGS.GIT],
   },
 ];
 ---
@@ -77,10 +52,8 @@ const PROJECTS = [
         {title}
       </h3>
       <p class="text-primary text-xl font-montserrat mb-4">{description}</p>
-      {/* <h3 class="mt-6 text-primary text-2xl font-semibold tracking-wide">
-        Tecnologías <span class="text-violet-700">Usadas</span>
-      </h3> */}
-      <ul class="flex flex-wrap justify-center gap-2 mb-4">
+
+      <ul class="flex flex-wrap justify-center gap-2 mb-4 w-200">
         {tags.map((tag) => (
           <li class="flex bg-primary text-white justify-center items-center px-3 py-2 rounded-4xl gap-x-2 text-xl">
             <tag.icon class="size-8" />
@@ -97,13 +70,15 @@ const PROJECTS = [
       </a>
       <aside class="mt-6 flex gap-x-8">
         <a href={github} target="_blank" rel="noopener noreferrer">
-          <button class="cursor-pointer bg-primary p-3 rounded-2xl text-xl hover:bg-violet-700 hover:scale-110 transition">
+          <button class="cursor-pointer text-white font-semibold tracking-wide flex justify-center items-center gap-x-2 bg-primary p-3 rounded-2xl text-xl hover:bg-violet-700 hover:scale-110 transition">
             <GitHubIcon class="size-10" />
+            Codigo Fuente
           </button>
         </a>
         <a href={link} target="_blank" rel="noopener noreferrer">
-          <button class="cursor-pointer bg-primary p-3 rounded-2xl text-xl hover:bg-violet-700 hover:scale-110 transition">
-            <VercelIcon class="size-10" />
+          <button class="cursor-pointer text-white font-semibold tracking-wide flex justify-center items-center gap-x-2 bg-primary p-3 rounded-2xl text-xl hover:bg-violet-700 hover:scale-110 transition">
+            <RocketIcon class="size-10" />
+            Ver Proyecto
           </button>
         </a>
       </aside>
