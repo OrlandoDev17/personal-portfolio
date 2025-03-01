@@ -1,0 +1,112 @@
+---
+// src/layouts/Layout.astro
+const navItems = [
+  {
+    title: 'Sobre Mí',
+    label: 'sobre-mi',
+    url: '/#sobre-mi',
+  },
+  {
+    title: 'Tecnologías',
+    label: 'tecnologias',
+    url: '/#tecnologias',
+  },
+  {
+    title: 'Proyectos',
+    label: 'proyectos',
+    url: '/#proyectos',
+  },
+  {
+    title: 'Contacto',
+    label: 'contacto',
+    url: '/#contacto',
+  },
+];
+---
+
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+>
+  <nav
+    class="flex px-3 text-xl font-medium rounded-full text-primary justify-center items-center"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-violet-700 hover:scale-110"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Función para verificar qué sección está visible
+    const checkSectionInView = () => {
+      let currentSection: string | null = null;
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+
+        // Verificar si la sección está visible en la ventana
+        if (
+          rect.top <= window.innerHeight * 0.3 &&
+          rect.bottom >= window.innerHeight * 0.2
+        ) {
+          currentSection = section.id;
+        }
+      });
+
+      // Remover la clase "active" de todos los enlaces
+      navLinks.forEach((link) => {
+        link.classList.remove('active');
+      });
+
+      // Agregar la clase "active" al enlace correspondiente
+      if (currentSection) {
+        const activeLink = Array.from(navLinks).find(
+          (link) => link.getAttribute('href') === `/#${currentSection}`
+        );
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+      }
+    };
+
+    // Agregar un listener para el scroll
+    window.addEventListener('scroll', checkSectionInView);
+
+    // Ejecutar la función inicialmente para marcar la sección activa al cargar la página
+    checkSectionInView();
+  });
+</script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 300px;
+  }
+
+  @keyframes nav-shadown {
+    0% {
+      background: #efefef;
+    }
+    to {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      background-color: #fff;
+    }
+  }
+  nav a.active {
+    color: #7008e7;
+    scale: 1.1;
+  }
+</style>
