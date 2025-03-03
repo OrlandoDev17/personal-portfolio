@@ -5,6 +5,7 @@ import AstroIcon from '../icons/AstroBuild.astro';
 import JavascriptIcon from '../icons/Javascript.astro';
 import GitIcon from '../icons/Git.astro';
 import GitHubIcon from '../icons/GitHub.astro';
+import TypescriptIcon from '../icons/Typescript.astro';
 import RocketIcon from '../icons/Rocket.astro';
 
 const TAGS = {
@@ -24,60 +25,93 @@ const TAGS = {
     name: 'JavaScript',
     icon: JavascriptIcon,
   },
+  TYPESCRIPT: {
+    name: 'TypeScript',
+    icon: TypescriptIcon,
+  },
   GIT: {
     name: 'Git',
     icon: GitIcon,
   },
+  GITHUB: {
+    name: 'GitHub',
+    icon: GitHubIcon,
+  },
 };
+
+const LINKS = [
+  {
+    label: 'Codigo Fuente',
+    url: 'https://github.com/OrlandoDev17/e-commerce-web',
+    icon: GitHubIcon,
+  },
+  {
+    label: 'Ver Proyecto',
+    url: 'https://e-commerce-web-eight-gules.vercel.app/',
+    icon: RocketIcon,
+  },
+];
 
 const PROJECTS = [
   {
     title: 'SneakerStore | La Mejor tienda online de venta de de Sneakers',
-    description: 'Pagina Web de E Commerce | Venta de Sneakers',
-    link: 'https://e-commerce-web-eight-gules.vercel.app/',
-    github: 'https://github.com/OrlandoDev17/e-commerce-web',
+    description:
+      'SneakerStore es una tienda en línea dedicada exclusivamente a la venta de calzado deportivo, urbano y de moda. Su diseño moderno y minimalista está pensado para ofrecer una experiencia de compra intuitiva y atractiva, especialmente dirigida a los amantes de las zapatillas (sneakers).',
+    links: LINKS,
     image: './projects/sneakerstore.webp',
-    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND, TAGS.JAVASCRIPT, TAGS.GIT],
+    tags: [
+      TAGS.ASTRO,
+      TAGS.REACT,
+      TAGS.TAILWIND,
+      TAGS.JAVASCRIPT,
+      TAGS.TYPESCRIPT,
+      TAGS.GIT,
+      TAGS.GITHUB,
+    ],
   },
 ];
 ---
 
 {
-  PROJECTS.map(({ title, description, link, github, image, tags }) => (
-    <article class="flex flex-col mt-10 items-center">
-      <h3 class="text-2xl text-violet-700 mb-2 font-bold font-montserrat">
-        {title}
-      </h3>
-      <p class="text-primary text-xl font-montserrat mb-4">{description}</p>
-
-      <ul class="flex flex-wrap justify-center gap-2 mb-4 w-200">
-        {tags.map((tag) => (
-          <li class="flex bg-primary text-white justify-center items-center px-3 py-2 rounded-4xl gap-x-2 text-xl">
-            <tag.icon class="size-8" />
-            {tag.name}
-          </li>
-        ))}
-      </ul>
-      <a href={link} target="_blank" rel="noopener noreferrer">
+  PROJECTS.map(({ title, description, links, image, tags }) => (
+    <article class="mt-36 flex justify-center gap-6">
+      <picture>
         <img
-          class="w-220 rounded-xl shadow-2xl"
+          class="w-170 rounded-3xl shadow-2xl"
           src={image}
-          alt={`Captura de pantalla del proyecto: ${title}`}
+          alt={`imagen del proyecto ${title}`}
         />
-      </a>
-      <aside class="mt-6 flex gap-x-8">
-        <a href={github} target="_blank" rel="noopener noreferrer">
-          <button class="cursor-pointer text-white font-semibold tracking-wide flex justify-center items-center gap-x-2 bg-primary p-3 rounded-2xl text-xl hover:bg-violet-700 hover:scale-110 transition">
-            <GitHubIcon class="size-10" />
-            Codigo Fuente
-          </button>
-        </a>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <button class="cursor-pointer text-white font-semibold tracking-wide flex justify-center items-center gap-x-2 bg-primary p-3 rounded-2xl text-xl hover:bg-violet-700 hover:scale-110 transition">
-            <RocketIcon class="size-10" />
-            Ver Proyecto
-          </button>
-        </a>
+      </picture>
+      <aside class="flex flex-col gap-4">
+        <h2 class="text-3xl text-primary text-pretty font-medium font-montserrat max-w-128">
+          {title}
+        </h2>
+        <ul class="flex gap-2 flex-wrap max-w-128">
+          {tags.map(({ name, icon: Icon }) => (
+            <li class="flex items-center gap-2 bg-primary text-white rounded-full px-3 py-2">
+              <Icon class="size-6" />
+              <span class=" text-lg font-medium">{name}</span>
+            </li>
+          ))}
+        </ul>
+        <h4 class="font-montserrat text-primary/90 font-semibold text-lg max-w-128 text-wrap">
+          {description}
+        </h4>
+        {
+          <div class="flex justify-center gap-8">
+            {links.map(({ label, url, icon: Icon }) => (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-primary text-lg font-medium border-2 p-2 rounded-xl shadow-xl hover:border-0 hover:bg-primary hover:text-white hover:scale-120 transition"
+              >
+                <Icon class="size-8" />
+                <span>{label}</span>
+              </a>
+            ))}
+          </div>
+        }
       </aside>
     </article>
   ))
