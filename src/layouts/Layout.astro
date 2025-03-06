@@ -1,7 +1,7 @@
 ---
-import '../styles/global.css';
 import '@fontsource/basic';
 import '@fontsource-variable/montserrat';
+import '../styles/global.css';
 import Header from '../components/Header.astro';
 ---
 
@@ -9,7 +9,7 @@ import Header from '../components/Header.astro';
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/iso.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta
@@ -28,8 +28,6 @@ import Header from '../components/Header.astro';
   html,
   body {
     margin: 0;
-    width: 100%;
-    height: 100%;
     font-family: 'Basic', sans-serif;
     scroll-behavior: smooth;
   }
