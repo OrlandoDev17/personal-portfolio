@@ -5,9 +5,14 @@ import SectionTitle from '../components/SectionTitle.astro';
 import Copyright from '../components/Copy.astro';
 ---
 
-<footer class="section min-h-auto bg-black-haze-100 p-28" id="contacto">
+<footer
+  class="section min-h-auto bg-black-haze-100 p-4 pt-12 md:p-28"
+  id="contacto"
+>
   <SectionTitle>Mí <span class="text-violet-700">Contacto</span></SectionTitle>
-  <main class="flex justify-center gap-128 pt-12">
+  <main
+    class="flex justify-center flex-col md:flex-row gap-16 md:gap-128 pt-8 md:pt-12"
+  >
     <ContactInfo />
     <ContactForm />
   </main>

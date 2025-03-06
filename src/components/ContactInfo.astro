@@ -4,20 +4,26 @@ import PhoneIcon from '../icons/Phone.astro';
 import SocialMedia from './SocialMedia.astro';
 ---
 
-<article class="flex flex-col gap-8">
-  <picture class="flex items-center gap-x-4">
-    <img class="size-20" src="./iso.svg" alt="Logo de Orlando López" />
-    <h3 class="text-4xl text-primary font-semibold tracking-wide">
+<article class="flex flex-col gap-4 md:gap-8">
+  <picture
+    class="flex items-center justify-center mr-21 md:mr-15 gap-x-2 md:gap-x-4"
+  >
+    <img
+      class="size-10 md:size-20"
+      src="./iso.svg"
+      alt="Logo de Orlando López"
+    />
+    <h3 class="text-2xl md:text-4xl text-primary font-semibold tracking-wide">
       Orlando <span class="text-violet-700">López</span>
     </h3>
   </picture>
   <aside class="flex flex-col gap-4 ml-6">
-    <div class="flex items-center gap-2 text-violet-700 text-3xl">
-      <MailIcon class="size-10" />
+    <div class="flex items-center gap-2 text-violet-700 text-xl md:text-3xl">
+      <MailIcon class="size-8 md:size-10" />
       <h4 class="text-primary/90">orlandodev17@gmail.com</h4>
     </div>
-    <div class="flex items-center gap-2 text-violet-700 text-3xl">
-      <PhoneIcon class="size-10" />
+    <div class="flex items-center gap-2 text-violet-700 text-xl md:text-3xl">
+      <PhoneIcon class="size-8 md:size-10" />
       <h4 class="text-primary/90">+58 4242860846</h4>
     </div>
   </aside>

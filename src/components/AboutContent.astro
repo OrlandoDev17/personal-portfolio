@@ -3,25 +3,33 @@ import SectionTitle from './SectionTitle.astro';
 ---
 
 <div
-  class="flex flex-col justify-center items-center lg:flex-row lg:justify-around gap-8 mx-8"
+  class="flex flex-col justify-center items-center lg:flex-row lg:justify-around gap-8 mx-5 md:mx-8"
 >
   <div class="relative flex flex-col items-center justify-center">
     <picture>
-      <img class="w-68" src="./images/avatar.svg" alt="Foto de Orlando López" />
+      <img
+        class="w-48 md:w-68"
+        src="./images/avatar.svg"
+        alt="Foto de Orlando López"
+      />
     </picture>
-    <button class="mt-12">
+    <button class="mt-4 md:mt-12">
       <a
-        class="border-2 text-primary border-primary py-4 px-8 text-2xl rounded-md cursor-pointer inline-block hover:bg-violet-700 hover:text-white hover:scale-125 hover:border-0 transition"
+        class="border-2 text-primary border-primary py-2 px-4 md:py-4 md:px-8 text-xl md:text-2xl rounded-md cursor-pointer inline-block hover:bg-violet-700 hover:text-white hover:scale-125 hover:border-0 transition"
         download
         href="./docs/CV Orlando Lopez.pdf">Descargar CV</a
       >
     </button>
   </div>
-  <article class="w-200 text-wrap flex-wrap flex flex-col gap-y-8">
-    <SectionTitle className="text-6xl">
+  <article
+    class="w-full md:w-200 flex-wrap flex flex-col justify-center items-center gap-y-4 md:gap-y-8"
+  >
+    <SectionTitle className="md:text-6xl">
       Sobre <span class="text-violet-700">Mí</span>
     </SectionTitle>
-    <p class="text-xl text-primary text-justify font-montserrat">
+    <p
+      class="text-wrap text-sm md:text-xl text-primary text-justify font-montserrat"
+    >
       <strong class="text-violet-700">¡Hola! Soy Orlando López</strong>, un
       desarrollador front-end junior de 18 años con una gran pasión por crear
       interfaces de usuario que sean funcionales, atractivas y fáciles de usar.
@@ -38,13 +46,13 @@ import SectionTitle from './SectionTitle.astro';
         poco más!</span
       >
     </p>
-    <p class="text-xl text-primary text-justify font-montserrat">
+    <p class="text-sm md:text-xl text-primary text-justify font-montserrat">
       La programación es una de mis mayores pasiones, y disfruto dedicar tiempo
       a desarrollar proyectos personales que me permiten explorar nuevas ideas,
       mejorar mis habilidades y estar en constante aprendizaje. Además de esto:
     </p>
     <ul
-      class="text-xl text-primary font-montserrat list-disc flex flex-col gap-4"
+      class="text-sm md:text-xl text-primary font-montserrat md:list-disc flex flex-col list-none gap-2 md:gap-4"
     >
       <li>
         <strong class="text-violet-700">Jugar VideoJuegos</strong> una actividad
