@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gracias por tu mensaje</title>
+  </head>
+  <body class="flex items-center justify-center h-screen bg-violet-100">
+    <div
+      class="text-center p-8 bg-white rounded-lg shadow-xl max-w-md mx-auto space-y-6"
+    >
+      <h1 class="text-3xl font-bold text-violet-700">
+        ¡Gracias por tu mensaje!
+      </h1>
+      <p class="text-lg text-gray-700">
+        He recibido tu mensaje y te responderé lo antes posible.
+      </p>
+      <div class="text-gray-500 text-sm">
+        Serás redirigido automáticamente en <span id="countdown">5</span> segundos...
+      </div>
+    </div>
+
+    <!-- Script para la redirección automática -->
+    <script>
+      // Redirige automáticamente después de 5 segundos
+      let countdown = 5;
+      const countdownElement = document.getElementById('countdown');
+
+      const interval = setInterval(() => {
+        countdown--;
+        if (countdownElement) {
+          countdownElement.textContent = countdown.toString();
+        }
+
+        if (countdown <= 0) {
+          clearInterval(interval);
+          window.location.href = '/'; // Redirige al índice
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
