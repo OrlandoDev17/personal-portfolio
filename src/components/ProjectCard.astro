@@ -77,24 +77,24 @@ const PROJECTS = [
     <article class="mt-10 md:mt-36 flex flex-col md:flex-row justify-center gap-6 p-2">
       <picture>
         <img
-          class="w-170 rounded-3xl shadow-2xl"
+          class="w-170 rounded-3xl shadow-2xl dark:shadow-white dark:shadow-xl"
           src={image}
           alt={`imagen del proyecto ${title}`}
         />
       </picture>
       <aside class="flex flex-col gap-4">
-        <h2 class="text-xl md:text-3xl text-primary text-pretty font-medium font-montserrat max-w-128">
+        <h2 class="text-xl md:text-3xl text-primary dark:text-white text-pretty font-medium font-montserrat max-w-128">
           {title}
         </h2>
         <ul class="flex gap-2 flex-wrap max-w-128">
           {tags.map(({ name, icon: Icon }) => (
-            <li class="flex items-center gap-2 bg-primary text-white rounded-full px-3 py-2">
+            <li class="flex items-center gap-2 bg-primary dark:bg-white/30 text-white  rounded-full px-3 py-2">
               <Icon class="size-4 md:size-6" />
               <span class="text-md md:text-lg font-medium">{name}</span>
             </li>
           ))}
         </ul>
-        <h4 class="font-montserrat text-primary/90 font-semibold text-sm md:text-lg max-w-128 text-wrap">
+        <h4 class="font-montserrat text-primary/90 dark:text-white/60 font-semibold text-sm md:text-lg max-w-128 text-wrap">
           {description}
         </h4>
         {
@@ -104,7 +104,8 @@ const PROJECTS = [
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2 text-primary text-md md:text-lg font-medium border-2 p-2 rounded-xl shadow-xl hover:border-0 hover:bg-primary hover:text-white hover:scale-120 transition"
+                class="flex items-center gap-2 text-primary dark:text-white text-md md:text-lg font-medium dark:border-white border-2 p-2 rounded-xl shadow-xl dark:shadow-white dark:shadow-md hover:border-0 hover:bg-primary dark:hover:bg-white
+              hover:text-white dark:hover:text-primary hover:scale-120 transition"
               >
                 <Icon class="size-6 md:size-8" />
                 <span>{label}</span>

@@ -19,3 +19,5 @@
 
   --background-image-hero: url('./images/background.webp');
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

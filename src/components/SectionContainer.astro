@@ -5,7 +5,7 @@ const { className, id } = Astro.props;
 <section
   id={id}
   data-section={id}
-  class={`section ${className} bg-black-haze-100  h-auto md:min-h-screen`}
+  class={`section ${className} bg-black-haze-100 dark:bg-black-haze-800  h-auto md:min-h-screen transition-colors duration-300 ease-in-out`}
 >
   <slot />
 </section>
