@@ -40,7 +40,9 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-violet-700 dark:hover:text-blue-500 hover:scale-110 active:text-violet-700 active:scale-110 dark:active:text-blue-500 "
+          class={`relative block px-2 py-2 transition hover:text-violet-700 dark:hover:text-blue-500 hover:scale-110 active:text-violet-700 active:scale-110 dark:active:text-blue-500 ${
+            link.url === '/#' ? 'active' : ''
+          }`}
           aria-label={link.label}
           href={link.url}
         >
@@ -85,6 +87,14 @@ const navItems = [
         );
         if (activeLink) {
           activeLink.classList.add('active');
+        }
+      } else {
+        // Si no hay sección visible, asegurar que el enlace de "Inicio" esté activo
+        const homeLink = Array.from(navLinks).find(
+          (link) => link.getAttribute('href') === '/#'
+        );
+        if (homeLink) {
+          homeLink.classList.add('active');
         }
       }
     };
