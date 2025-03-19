@@ -3,9 +3,9 @@ import ThemeToggle from './ThemeToggle.astro';
 
 const navItems = [
   {
-    title: 'Sobre Mí',
-    label: 'sobre-mi',
-    url: '/#sobre-mi',
+    title: 'Proyectos',
+    label: 'proyectos',
+    url: '/#proyectos',
   },
   {
     title: 'Tecnologías',
@@ -13,9 +13,9 @@ const navItems = [
     url: '/#tecnologias',
   },
   {
-    title: 'Proyectos',
-    label: 'proyectos',
-    url: '/#proyectos',
+    title: 'Sobre Mí',
+    label: 'sobre-mi',
+    url: '/#sobre-mi',
   },
   {
     title: 'Contacto',
@@ -35,7 +35,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-violet-700 dark:hover:text-blue-500 hover:scale-110 "
+          class="relative block px-2 py-2 transition hover:text-violet-700 dark:hover:text-blue-500 hover:scale-110 active:text-violet-700 active:scale-110 dark:active:text-blue-500 "
           aria-label={link.label}
           href={link.url}
         >
@@ -103,9 +103,5 @@ const navItems = [
     to {
       box-shadow: 0 12px 25px -9px rgba(0, 0, 0, 0.5);
     }
-  }
-  nav a.active {
-    color: #7008e7;
-    transform: scale(1.1);
   }
 </style>
