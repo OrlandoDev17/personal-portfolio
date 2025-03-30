@@ -1,120 +1,24 @@
 ---
-import ReactIcon from '../icons/React.astro';
-import TailwindIcon from '../icons/Tailwind.astro';
-import AstroIcon from '../icons/AstroBuild.astro';
-import TypescriptIcon from '../icons/Typescript.astro';
-import VSCodeIcon from '../icons/VSCode.astro';
-import JavascriptIcon from '../icons/Javascript.astro';
-import FigmaIcon from '../icons/Figma.astro';
-import GitIcon from '../icons/Git.astro';
-import GitHubIcon from '../icons/GitHub.astro';
-import QwenIcon from '../icons/Qwen.astro';
-import VercelIcon from '../icons/Vercel.astro';
-import NodeJsIcon from '../icons/NodeJs.astro';
-import NextJsIcon from '../icons/NextJs.astro';
-import PythonIcon from '../icons/Python.astro';
-import MySqlIcon from '../icons/MySql.astro';
-
-const TECHS = {
-  REACT: {
-    name: 'React',
-    icon: ReactIcon,
-  },
-  TAILWIND: {
-    name: 'Tailwind Css',
-    icon: TailwindIcon,
-  },
-  ASTRO: {
-    name: 'Astro',
-    icon: AstroIcon,
-  },
-  TYPESCRIPT: {
-    name: 'TypeScript',
-    icon: TypescriptIcon,
-  },
-  JAVASCRIPT: {
-    name: 'JavaScript',
-    icon: JavascriptIcon,
-  },
-  VSCODE: {
-    name: 'VS Code',
-    icon: VSCodeIcon,
-  },
-  FIGMA: {
-    name: 'Figma',
-    icon: FigmaIcon,
-  },
-  GIT: {
-    name: 'Git',
-    icon: GitIcon,
-  },
-  GITHUB: {
-    name: 'GitHub',
-    icon: GitHubIcon,
-  },
-  QWEN: {
-    name: 'Qwen',
-    icon: QwenIcon,
-  },
-  VERCEL: {
-    name: 'Vercel',
-    icon: VercelIcon,
-  },
-  NODEJS: {
-    name: 'Node Js',
-    icon: NodeJsIcon,
-  },
-  NEXTJS: {
-    name: 'Next.Js',
-    icon: NextJsIcon,
-  },
-  PYTHON: {
-    name: 'Python',
-    icon: PythonIcon,
-  },
-  MYSQL: {
-    name: 'MySql',
-    icon: MySqlIcon,
-  },
-};
-
-const STACKS = [
-  {
-    title: 'Front-End',
-    techs: [
-      TECHS.REACT,
-      TECHS.ASTRO,
-      TECHS.TAILWIND,
-      TECHS.JAVASCRIPT,
-      TECHS.TYPESCRIPT,
-      TECHS.FIGMA,
-    ],
-  },
-  {
-    title: 'Herramientas',
-    techs: [TECHS.VSCODE, TECHS.GIT, TECHS.GITHUB, TECHS.QWEN, TECHS.VERCEL],
-  },
-  {
-    title: 'Aprendiendo',
-    techs: [TECHS.NODEJS, TECHS.NEXTJS, TECHS.PYTHON, TECHS.MYSQL],
-  },
-];
+import { STACKS } from '../consts/technologies';
+import AnimateElement from './AnimateElement.astro';
 ---
 
 {
   STACKS.map(({ title, techs }) => (
-    <article class="bg-black-haze-300 size-75 md:size-85  p-4 flex flex-col items-center shadow-xl dark:shadow-white dark:shadow-lg rounded-xl mt-8">
-      <h3 class="text-2xl md:text-3xl text-violet-700 dark:text-blue-500 mb-2 md:mb-4 font-bold font-montserrat">
-        {title}
-      </h3>
-      <ul class="flex flex-wrap justify-center  gap-4">
-        {techs.map((tech) => (
-          <li class="flex flex-col items-center gap-1 md:gap-2 text-primary text-lg md:text-xl">
-            <tech.icon class="size-16 md:size-18" />
-            {tech.name}
-          </li>
-        ))}
-      </ul>
-    </article>
+    <AnimateElement>
+      <article class="animate-slide-in-bottom bg-black-haze-300 size-75 md:size-85  p-4 flex flex-col items-center shadow-xl dark:shadow-white dark:shadow-lg rounded-xl mt-8">
+        <h3 class="text-2xl md:text-3xl text-violet-700 dark:text-blue-500 mb-2 md:mb-4 font-bold font-montserrat">
+          {title}
+        </h3>
+        <ul class="flex flex-wrap justify-center  gap-4">
+          {techs.map((tech) => (
+            <li class="flex flex-col items-center gap-1 md:gap-2 text-primary text-lg md:text-xl">
+              <tech.icon class="size-16 md:size-18" />
+              {tech.name}
+            </li>
+          ))}
+        </ul>
+      </article>
+    </AnimateElement>
   ))
 }
