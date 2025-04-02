@@ -79,7 +79,7 @@ export const PROJECTS = [
   {
     title: 'SneakerStore | La Mejor tienda online de venta de de Sneakers',
     description:
-      'SneakerStore es una tienda en línea dedicada exclusivamente a la venta de calzado deportivo, urbano y de moda. Su diseño moderno y minimalista está pensado para ofrecer una experiencia de compra intuitiva y atractiva, especialmente dirigida a los amantes de las zapatillas (sneakers).',
+      'Es una web de E-Commerce muy llamativa, creada con Astro y React, contiene un carrusel interactivp, una grid con todos los zapatos y un efecto de nubes en el fondo proximamente los filtros y las busquedas. EN DESARROLLO!!',
     links: [
       {
         label: 'Codigo Fuente',
