@@ -79,7 +79,7 @@ export const PROJECTS = [
   {
     title: 'SneakerStore | La Mejor tienda online de venta de de Sneakers',
     description:
-      'Es una web de E-Commerce muy llamativa, creada con Astro y React, contiene un carrusel interactivp, una grid con todos los zapatos y un efecto de nubes en el fondo proximamente los filtros y las busquedas. EN DESARROLLO!!',
+      'Es una web de E-Commerce muy llamativa, creada con Astro y React, contiene un carrusel interactivo, una grid con todos los zapatos y un efecto de nubes en el fondo proximamente los filtros y las busquedas. EN DESARROLLO!!',
     links: [
       {
         label: 'Codigo Fuente',
