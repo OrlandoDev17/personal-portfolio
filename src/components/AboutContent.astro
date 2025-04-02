@@ -1,4 +1,5 @@
 ---
+import AnimateContainer from './AnimateContainer.astro';
 import SectionTitle from './SectionTitle.astro';
 ---
 
@@ -27,33 +28,39 @@ import SectionTitle from './SectionTitle.astro';
     <SectionTitle className="md:text-6xl">
       Sobre <span class="text-violet-700 dark:text-blue-500">Mí</span>
     </SectionTitle>
-    <p
-      class="text-wrap text-sm md:text-xl text-primary dark:text-white text-justify font-montserrat"
-    >
-      <strong class="text-violet-700 dark:text-blue-500"
-        >¡Hola! Soy Orlando López</strong
-      >, un desarrollador front-end junior de 18 años con una gran pasión por
-      crear interfaces de usuario que sean funcionales, atractivas y fáciles de
-      usar. Actualmente estudio informática, lo que me ha permitido profundizar
-      en el mundo del desarrollo web y aprender a combinar estética y
-      usabilidad. Tengo experiencia trabajando con tecnologías como <strong
-        class="text-violet-700 dark:text-blue-500"
-        >React, Astro, Tailwind CSS, JavaScript y TypeScript</strong
-      >, y siempre estoy buscando aprender más para mejorar mis habilidades. Mi
-      objetivo es construir experiencias digitales que no solo se vean bien,
-      sino que también ofrezcan interactividad y simplicidad.
-      <span class="font-semibold"
-        >¡Gracias por visitar mi portafolio y tomarte el tiempo de conocerme un
-        poco más!</span
-      >
-    </p>
-    <p
-      class="text-sm md:text-xl text-primary dark:text-white text-justify font-montserrat"
-    >
-      La programación es una de mis mayores pasiones, y disfruto dedicar tiempo
-      a desarrollar proyectos personales que me permiten explorar nuevas ideas,
-      mejorar mis habilidades y estar en constante aprendizaje. Además de esto:
-    </p>
+    <AnimateContainer>
+      <div>
+        <p
+          class="text-wrap text-sm md:text-xl text-primary dark:text-white
+      text-justify font-montserrat"
+        >
+          <strong class="text-violet-700 dark:text-blue-500"
+            >¡Hola! Soy Orlando López</strong
+          >, un desarrollador front-end junior de 18 años con una gran pasión
+          por crear interfaces de usuario que sean funcionales, atractivas y
+          fáciles de usar. Actualmente estudio informática, lo que me ha
+          permitido profundizar en el mundo del desarrollo web y aprender a
+          combinar estética y usabilidad. Tengo experiencia trabajando con
+          tecnologías como <strong class="text-violet-700 dark:text-blue-500"
+            >React, Astro, Tailwind CSS, JavaScript y TypeScript</strong
+          >, y siempre estoy buscando aprender más para mejorar mis habilidades.
+          Mi objetivo es construir experiencias digitales que no solo se vean
+          bien, sino que también ofrezcan interactividad y simplicidad.
+          <span class="font-semibold"
+            >¡Gracias por visitar mi portafolio y tomarte el tiempo de conocerme
+            un poco más!</span
+          >
+        </p>
+        <p
+          class="text-sm md:text-xl text-primary dark:text-white text-justify font-montserrat"
+        >
+          La programación es una de mis mayores pasiones, y disfruto dedicar
+          tiempo a desarrollar proyectos personales que me permiten explorar
+          nuevas ideas, mejorar mis habilidades y estar en constante
+          aprendizaje. Además de esto:
+        </p>
+      </div>
+    </AnimateContainer>
     <ul
       class="text-sm md:text-xl text-primary dark:text-white font-montserrat md:list-disc flex flex-col list-none gap-2 md:gap-4"
     >

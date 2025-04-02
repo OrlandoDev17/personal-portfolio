@@ -1,9 +1,12 @@
 ---
 const { className } = Astro.props;
+import AnimateContainer from './AnimateContainer.astro';
 ---
 
-<h2
-  class={`text-center text-primary dark:text-white text-5xl font-semibold tracking-wide ${className}`}
->
-  <slot />
-</h2>
+<AnimateContainer>
+  <h2
+    class={`a-fade-in-left text-center text-primary dark:text-white text-5xl font-semibold tracking-wide ${className}`}
+  >
+    <slot />
+  </h2>
+</AnimateContainer>

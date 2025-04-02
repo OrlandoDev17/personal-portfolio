@@ -1,4 +1,6 @@
 ---
+import AnimateContainer from './AnimateContainer.astro';
+
 // src/pages/contacto.astro
 const formFields = [
   { id: 'name', label: 'Nombre', type: 'text', required: true },
@@ -7,53 +9,55 @@ const formFields = [
 ];
 ---
 
-<form
-  class="border-primary/40 border-2 rounded-2xl p-6 flex flex-col space-y-4 bg-white dark:bg-white/20 shadow-xl"
-  action="https://formspree.io/f/xoveqago"
-  method="post"
-  onsubmit="handleSubmit(event)"
->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    {
-      formFields.slice(0, 2).map(({ id, label, required }) => (
-        <div class="flex flex-col space-y-2">
-          <label
-            class="text-md md:text-xl dark:text-white font-montserrat font-semibold"
-            for={id}
-          >
-            {label}
-          </label>
-          <input
-            class="border-2 border-gray-300 dark:bg-white rounded-lg p-2 focus:outline-none focus:border-violet-700 dark:focus:border-blue-500"
-            id={id}
-            name={id}
-            required={required}
-          />
-        </div>
-      ))
-    }
-  </div>
-  <div class="flex flex-col space-y-2">
-    <label
-      class="text-md md:text-xl dark:text-white font-montserrat font-semibold"
-      for="message"
-    >
-      Mensaje
-    </label>
-    <textarea
-      class="border-2 border-gray-300 dark:bg-white rounded-lg p-2 focus:outline-none focus:border-violet-700 dark:focus:border-blue-500"
-      id="message"
-      name="message"
-      required></textarea>
-  </div>
-
-  <button
-    class="bg-white text-primary border-2 border-violet-700 dark:border-blue-500 rounded-lg p-2 mt-4 cursor-pointer text-lg md:text-2xl hover:bg-violet-700 dark:hover:bg-blue-500 hover:text-white hover:scale-105 transition"
-    type="submit"
+<AnimateContainer>
+  <form
+    class="a-fade-in-up border-primary/40 border-2 rounded-2xl p-6 flex flex-col space-y-4 bg-white dark:bg-white/20 shadow-xl"
+    action="https://formspree.io/f/xoveqago"
+    method="post"
+    onsubmit="handleSubmit(event)"
   >
-    Enviar
-  </button>
-</form>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {
+        formFields.slice(0, 2).map(({ id, label, required }) => (
+          <div class="flex flex-col space-y-2">
+            <label
+              class="text-md md:text-xl dark:text-white font-montserrat font-semibold"
+              for={id}
+            >
+              {label}
+            </label>
+            <input
+              class="border-2 border-gray-300 dark:bg-white rounded-lg p-2 focus:outline-none focus:border-violet-700 dark:focus:border-blue-500"
+              id={id}
+              name={id}
+              required={required}
+            />
+          </div>
+        ))
+      }
+    </div>
+    <div class="flex flex-col space-y-2">
+      <label
+        class="text-md md:text-xl dark:text-white font-montserrat font-semibold"
+        for="message"
+      >
+        Mensaje
+      </label>
+      <textarea
+        class="border-2 border-gray-300 dark:bg-white rounded-lg p-2 focus:outline-none focus:border-violet-700 dark:focus:border-blue-500"
+        id="message"
+        name="message"
+        required></textarea>
+    </div>
+
+    <button
+      class="bg-white text-primary border-2 border-violet-700 dark:border-blue-500 rounded-lg p-2 mt-4 cursor-pointer text-lg md:text-2xl hover:bg-violet-700 dark:hover:bg-blue-500 hover:text-white hover:scale-105 transition"
+      type="submit"
+    >
+      Enviar
+    </button>
+  </form>
+</AnimateContainer>
 
 <script>
   function handleSubmit(event: { preventDefault: () => void; target: any }) {

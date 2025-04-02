@@ -2,6 +2,8 @@
 import SectionContainer from '../components/SectionContainer.astro';
 import StackCard from '../components/StackCard.astro';
 import SectionTitle from '../components/SectionTitle.astro';
+
+import AnimateContainer from '../components/AnimateContainer.astro';
 ---
 
 <SectionContainer
@@ -11,22 +13,25 @@ import SectionTitle from '../components/SectionTitle.astro';
   <SectionTitle>
     Stack <span class="text-violet-700 dark:text-blue-500">Tecnológico</span>
   </SectionTitle>
-  <p
-    class="w-full md:w-260 mt-4 md:mt-12 text-primary dark:text-white text-balance text-sm text-center md:text-xl font-montserrat"
-  >
-    En mi camino de aprendizaje en el mundo del <strong
-      class="text-violet-700 dark:text-blue-500">desarrollo web</strong
-    >, he explorado y dominado diversas <strong
-      class="text-violet-700 dark:text-blue-500">tecnologías</strong
-    > que conforman mi stack actual. Cada <strong
-      class="text-violet-700 dark:text-blue-500">herramienta y lenguaje</strong
-    > que utilizo refleja mi dedicación por entender a fondo los diferentes aspectos
-    del desarrollo, Este proceso me ha permitido crear soluciones <strong
-      class="text-violet-700 dark:text-blue-500"
-      >digitales funcionales y escalables</strong
-    >, siempre con el objetivo de adaptarme a las necesidades cambiantes del
-    entorno tecnológico.
-  </p>
+  <AnimateContainer>
+    <p
+      class="a-blurred-fade w-full md:w-260 mt-4 md:mt-12 text-primary dark:text-white text-balance text-sm text-center md:text-xl font-montserrat"
+    >
+      En mi camino de aprendizaje en el mundo del <strong
+        class="text-violet-700 dark:text-blue-500">desarrollo web</strong
+      >, he explorado y dominado diversas <strong
+        class="text-violet-700 dark:text-blue-500">tecnologías</strong
+      > que conforman mi stack actual. Cada <strong
+        class="text-violet-700 dark:text-blue-500"
+        >herramienta y lenguaje</strong
+      > que utilizo refleja mi dedicación por entender a fondo los diferentes aspectos
+      del desarrollo, Este proceso me ha permitido crear soluciones <strong
+        class="text-violet-700 dark:text-blue-500"
+        >digitales funcionales y escalables</strong
+      >, siempre con el objetivo de adaptarme a las necesidades cambiantes del
+      entorno tecnológico.
+    </p>
+  </AnimateContainer>
   <main class="flex mt-0 md:mt-16 justify-center gap-0 md:gap-12 flex-wrap">
     <StackCard />
   </main>
