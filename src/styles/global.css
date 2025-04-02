@@ -22,3 +22,19 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant active (&:where(.active, .active *));
+
+/* ANIMACIONES */
+
+.a-fade-in-left {
+  animation: fade-in-left 0.5s linear;
+}
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,61 @@
+<div class="animate-container">
+  <slot />
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const containers = document.querySelectorAll('.animate-container');
+
+    containers.forEach((container) => {
+      // Seleccionamos solo los hijos directos con clases que inicien con "a-"
+      const animatedElements = Array.from(container.children).filter((el) =>
+        Array.from(el.classList).some((cls) => cls.startsWith('a-'))
+      );
+
+      if (animatedElements.length === 0) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement;
+
+              // Si el elemento ya está animándose, no hacemos nada
+              if (el.dataset.animating === 'true') return;
+
+              // Marcamos el elemento como animándose
+              el.dataset.animating = 'true';
+
+              // Obtenemos las clases de animación
+              const animationClasses = Array.from(el.classList).filter((cls) =>
+                cls.startsWith('a-')
+              );
+
+              // Eliminamos y forzamos el reflujo para reiniciar la animación
+              el.classList.remove(...animationClasses);
+              void el.offsetWidth;
+              el.classList.add(...animationClasses);
+
+              // Cuando termine la animación, permitimos que se vuelva a animar
+              el.addEventListener(
+                'animationend',
+                () => {
+                  el.dataset.animating = 'false';
+                },
+                { once: true }
+              );
+            }
+          });
+        },
+        {
+          root: null, // Usamos el viewport como referencia
+          rootMargin: '0px', // Sin márgenes adicionales
+          threshold: 0.5, // Se activa cuando al menos el 50% del elemento es visible
+        }
+      );
+
+      // Observamos cada elemento animado
+      animatedElements.forEach((el) => observer.observe(el));
+    });
+  });
+</script>
