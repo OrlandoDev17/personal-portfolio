@@ -1,20 +1,16 @@
 ---
 import { PROJECTS } from '../consts/projects';
-
-import AnimateElement from './AnimateElement.astro';
 ---
 
 {
   PROJECTS.map(({ title, description, links, image, tags }) => (
     <article class="mt-10 md:mt-24 flex flex-col md:flex-row justify-center gap-6 p-2">
       <picture>
-        <AnimateElement>
-          <img
-            class="animate-zoom-in w-170 rounded-3xl shadow-2xl dark:shadow-white dark:shadow-xl"
-            src={image}
-            alt={`imagen del proyecto ${title}`}
-          />
-        </AnimateElement>
+        <img
+          class="w-170 rounded-3xl shadow-2xl dark:shadow-white dark:shadow-xl"
+          src={image}
+          alt={`imagen del proyecto ${title}`}
+        />
       </picture>
       <aside class="flex flex-col gap-4">
         <h2 class="text-xl md:text-3xl text-primary dark:text-white text-pretty font-medium font-montserrat max-w-128">
