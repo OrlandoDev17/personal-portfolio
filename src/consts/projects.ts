@@ -51,6 +51,33 @@ export const URLS = {
 
 export const PROJECTS = [
   {
+    title: 'SneakerStore | La Mejor tienda online de venta de de Sneakers',
+    description:
+      'Es una web de E-Commerce muy llamativa, creada con Astro y React, contiene un carrusel interactivo, una grid con todos los zapatos y animaciones muy bonitas. EN DESARROLLO!!',
+    links: [
+      {
+        label: 'Codigo Fuente',
+        url: URLS.ECOMMERCE.source,
+        icon: GitHubIcon,
+      },
+      {
+        label: 'Ver Proyecto',
+        url: URLS.ECOMMERCE.project,
+        icon: RocketIcon,
+      },
+    ],
+    image: './projects/sneakerstore.webp',
+    tags: [
+      TAGS.ASTRO,
+      TAGS.REACT,
+      TAGS.TAILWIND,
+      TAGS.JAVASCRIPT,
+      TAGS.TYPESCRIPT,
+      TAGS.GIT,
+      TAGS.GITHUB,
+    ],
+  },
+  {
     title: 'La Velada del Año V | Proyecto no oficial',
     description:
       'Esta no es la web oficial!! En el proyecto se muestra un contador de los dias, horas, minutos y segundos que faltan para que empiece el evento, además tiene una seccion en donde se muestran todos los participantes con un efecto hover muy interesante. EN DESARROLLO!!',
@@ -72,33 +99,6 @@ export const PROJECTS = [
       TAGS.REACT,
       TAGS.TAILWIND,
       TAGS.JAVASCRIPT,
-      TAGS.GIT,
-      TAGS.GITHUB,
-    ],
-  },
-  {
-    title: 'SneakerStore | La Mejor tienda online de venta de de Sneakers',
-    description:
-      'Es una web de E-Commerce muy llamativa, creada con Astro y React, contiene un carrusel interactivo, una grid con todos los zapatos y un efecto de nubes en el fondo proximamente los filtros y las busquedas. EN DESARROLLO!!',
-    links: [
-      {
-        label: 'Codigo Fuente',
-        url: URLS.ECOMMERCE.source,
-        icon: GitHubIcon,
-      },
-      {
-        label: 'Ver Proyecto',
-        url: URLS.ECOMMERCE.project,
-        icon: RocketIcon,
-      },
-    ],
-    image: './projects/sneakerstore.webp',
-    tags: [
-      TAGS.ASTRO,
-      TAGS.REACT,
-      TAGS.TAILWIND,
-      TAGS.JAVASCRIPT,
-      TAGS.TYPESCRIPT,
       TAGS.GIT,
       TAGS.GITHUB,
     ],
