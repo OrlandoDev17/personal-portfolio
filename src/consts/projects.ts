@@ -44,8 +44,8 @@ export const URLS = {
     project: 'https://la-velada-v.vercel.app/',
   },
   ECOMMERCE: {
-    source: 'https://github.com/OrlandoDev17/e-commerce-web',
-    project: 'https://e-commerce-web-eight-gules.vercel.app/',
+    source: 'https://github.com/OrlandoDev17/sneaker-store',
+    project: 'https://sneaker-store-nu.vercel.app/',
   },
 } as const;
 
