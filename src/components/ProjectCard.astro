@@ -8,7 +8,7 @@ import AnimateContainer from './AnimateContainer.astro';
   PROJECTS.map(({ title, description, links, image, tags }) => (
     <article class="mt-10 md:mt-24 flex flex-col md:flex-row justify-center gap-6 p-2">
       <AnimateContainer>
-        <picture class="a-fade-in-left inline-block">
+        <picture class="a-fade-to-right inline-block opacity-0">
           <img
             class="w-170 rounded-3xl shadow-2xl dark:shadow-white dark:shadow-xl"
             src={image}
@@ -17,7 +17,7 @@ import AnimateContainer from './AnimateContainer.astro';
         </picture>
       </AnimateContainer>
       <AnimateContainer>
-        <aside class="a-fade-in-right flex flex-col gap-4">
+        <aside class="a-fade-to-left flex flex-col gap-4 opacity-0">
           <h2 class="text-xl md:text-3xl text-primary dark:text-white text-pretty font-medium font-montserrat max-w-128">
             {title}
           </h2>

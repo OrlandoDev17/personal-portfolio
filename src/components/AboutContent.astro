@@ -7,20 +7,24 @@ import SectionTitle from './SectionTitle.astro';
   class="flex flex-col justify-center items-center lg:flex-row lg:justify-around gap-8 mx-5 md:mx-8"
 >
   <div class="relative flex flex-col items-center justify-center">
-    <picture>
-      <img
-        class="w-48 md:w-68 border-2 rounded-full border-primary dark:border-white"
-        src="./images/avatar.svg"
-        alt="Foto de Orlando López"
-      />
-    </picture>
-    <button class="mt-4 md:mt-12">
-      <a
-        class="border-2 text-primary dark:text-white border-primary dark:border-white py-2 px-4 md:py-4 md:px-8 text-xl md:text-2xl rounded-md cursor-pointer inline-block dark:hover:bg-blue-500 hover:bg-violet-700 hover:text-white hover:scale-125 hover:border-0 transition"
-        download
-        href="./docs/CV Orlando Lopez.pdf">Descargar CV</a
-      >
-    </button>
+    <AnimateContainer>
+      <div class="a-fade-scale flex flex-col opacity-0">
+        <picture>
+          <img
+            class="w-48 md:w-68 border-2 rounded-full border-primary dark:border-white"
+            src="./images/avatar.svg"
+            alt="Foto de Orlando López"
+          />
+        </picture>
+        <button class="mt-4 md:mt-12">
+          <a
+            class="border-2 text-primary dark:text-white border-primary dark:border-white py-2 px-4 md:py-4 md:px-8 text-xl md:text-2xl rounded-md cursor-pointer inline-block dark:hover:bg-blue-500 hover:bg-violet-700 hover:text-white hover:scale-125 hover:border-0 transition"
+            download
+            href="./docs/CV Orlando Lopez.pdf">Descargar CV</a
+          >
+        </button>
+      </div>
+    </AnimateContainer>
   </div>
   <article
     class="w-full md:w-200 flex-wrap flex flex-col justify-center items-center gap-y-4 md:gap-y-8"
@@ -29,7 +33,7 @@ import SectionTitle from './SectionTitle.astro';
       Sobre <span class="text-violet-700 dark:text-blue-500">Mí</span>
     </SectionTitle>
     <AnimateContainer>
-      <div>
+      <div class="a-fade-to-right opacity-0">
         <p
           class="text-wrap text-sm md:text-xl text-primary dark:text-white
       text-justify font-montserrat"
@@ -64,29 +68,33 @@ import SectionTitle from './SectionTitle.astro';
     <ul
       class="text-sm md:text-xl text-primary dark:text-white font-montserrat md:list-disc flex flex-col list-none gap-2 md:gap-4"
     >
-      <li>
-        <strong class="text-violet-700 dark:text-blue-500"
-          >Jugar VideoJuegos</strong
-        > una actividad que me ayuda a relajarme y desconectar.
-      </li>
-      <li>
-        <strong class="text-violet-700 dark:text-blue-500">Jugar fútbol</strong>
-        , ya que es una excelente manera de mantenerme activo y conectar con amigos.
-      </li>
-      <li>
-        <strong class="text-violet-700 dark:text-blue-500"
-          >Ver videos relacionados con la programación</strong
-        >
-        , porque siempre encuentro algo nuevo que me inspira y me impulsa a seguir
-        creciendo como desarrollador
-      </li>
-      <li>
-        <strong class="text-violet-700 dark:text-blue-500"
-          >Pasar tiempo con mis seres queridos</strong
-        >
-        , es la mejor manera de desestresarte y cambiar de aires ya que estar con
-        las personas que amo me calma y me hace estar mas centrado.
-      </li>
+      <AnimateContainer>
+        <li class="a-fade-to-right opacity-0">
+          <strong class="text-violet-700 dark:text-blue-500"
+            >Jugar VideoJuegos</strong
+          > una actividad que me ayuda a relajarme y desconectar.
+        </li>
+        <li class="a-fade-to-right opacity-0">
+          <strong class="text-violet-700 dark:text-blue-500"
+            >Jugar fútbol</strong
+          >
+          , ya que es una excelente manera de mantenerme activo y conectar con amigos.
+        </li>
+        <li class="a-fade-to-right opacity-0">
+          <strong class="text-violet-700 dark:text-blue-500"
+            >Ver videos relacionados con la programación</strong
+          >
+          , porque siempre encuentro algo nuevo que me inspira y me impulsa a seguir
+          creciendo como desarrollador
+        </li>
+        <li class="a-fade-to-right opacity-0">
+          <strong class="text-violet-700 dark:text-blue-500"
+            >Pasar tiempo con mis seres queridos</strong
+          >
+          , es la mejor manera de desestresarte y cambiar de aires ya que estar con
+          las personas que amo me calma y me hace estar mas centrado.
+        </li>
+      </AnimateContainer>
     </ul>
   </article>
 </div>

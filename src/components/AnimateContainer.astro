@@ -1,4 +1,4 @@
-<div class="animate-container">
+<div class={`animate-container ${Astro.props.class}`}>
   <slot />
 </div>
 
@@ -17,44 +17,38 @@
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
+            const el = entry.target;
+
             if (entry.isIntersecting) {
-              const el = entry.target as HTMLElement;
+              // Si ya fue animado, no hacer nada
+              if ((el as HTMLElement).dataset.animated === 'true') return;
 
-              // Si el elemento ya está animándose, no hacemos nada
-              if (el.dataset.animating === 'true') return;
+              // Marcamos como animado
+              (el as HTMLElement).dataset.animated = 'true';
 
-              // Marcamos el elemento como animándose
-              el.dataset.animating = 'true';
+              // Elimina la clase opacity-0 si existe
+              if (el.classList.contains('opacity-0')) {
+                el.classList.remove('opacity-0');
+              }
 
-              // Obtenemos las clases de animación
               const animationClasses = Array.from(el.classList).filter((cls) =>
                 cls.startsWith('a-')
               );
 
-              // Eliminamos y forzamos el reflujo para reiniciar la animación
+              // Forzar reflujo para reiniciar la animación
               el.classList.remove(...animationClasses);
-              void el.offsetWidth;
+              void (el as HTMLElement).offsetWidth; // Reflujo forzado
               el.classList.add(...animationClasses);
-
-              // Cuando termine la animación, permitimos que se vuelva a animar
-              el.addEventListener(
-                'animationend',
-                () => {
-                  el.dataset.animating = 'false';
-                },
-                { once: true }
-              );
             }
           });
         },
         {
-          root: null, // Usamos el viewport como referencia
-          rootMargin: '0px', // Sin márgenes adicionales
-          threshold: 0.1, // Se activa cuando al menos el 50% del elemento es visible
+          root: null,
+          rootMargin: '0px',
+          threshold: 1, // Activa cuando el elemento está completamente visible
         }
       );
 
-      // Observamos cada elemento animado
       animatedElements.forEach((el) => observer.observe(el));
     });
   });

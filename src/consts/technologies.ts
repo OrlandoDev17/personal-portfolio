@@ -88,13 +88,16 @@ export const STACKS = [
       TECHS.TYPESCRIPT,
       TECHS.FIGMA,
     ],
+    delay: 0,
   },
   {
     title: 'Herramientas',
     techs: [TECHS.VSCODE, TECHS.GIT, TECHS.GITHUB, TECHS.QWEN, TECHS.VERCEL],
+    delay: 100,
   },
   {
     title: 'Aprendiendo',
     techs: [TECHS.NODEJS, TECHS.NEXTJS, TECHS.PYTHON, TECHS.MYSQL],
+    delay: 200,
   },
 ] as const;

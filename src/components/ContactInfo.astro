@@ -6,34 +6,36 @@ import AnimateContainer from './AnimateContainer.astro';
 import SocialMedia from './SocialMedia.astro';
 ---
 
-<AnimateContainer>
-  <article class="a-fade-in-up flex flex-col gap-4 md:gap-8">
-    <picture
-      class="flex items-center justify-center mr-21 md:mr-15 gap-x-2 md:gap-x-4"
-    >
-      <Logo class="text-primary dark:text-white size-16" />
-      <h3
-        class="text-2xl md:text-4xl text-primary dark:text-white font-semibold tracking-wide"
+<article class="flex flex-col gap-4 md:gap-8">
+  <AnimateContainer>
+    <div class="a-fade-to-bottom opacity-0">
+      <picture
+        class="flex items-center justify-center mr-21 md:mr-15 gap-x-2 md:gap-x-4"
       >
-        Orlando <span class="text-violet-700 dark:text-blue-500">López</span>
-      </h3>
-    </picture>
-    <aside class="flex flex-col gap-4 ml-6">
-      <div
-        class="flex items-center gap-2 text-violet-700 dark:text-blue-500 text-xl md:text-3xl"
-      >
-        <MailIcon class="size-8 md:size-10" />
-        <h4 class="text-primary/90 dark:text-white/80">
-          orlandodev17@gmail.com
-        </h4>
-      </div>
-      <div
-        class="flex items-center gap-2 text-violet-700 dark:text-blue-500 text-xl md:text-3xl"
-      >
-        <PhoneIcon class="size-8 md:size-10" />
-        <h4 class="text-primary/90 dark:text-white/80">+58 4242860846</h4>
-      </div>
-    </aside>
-    <SocialMedia />
-  </article>
-</AnimateContainer>
+        <Logo class="text-primary dark:text-white size-16" />
+        <h3
+          class="text-2xl md:text-4xl text-primary dark:text-white font-semibold tracking-wide"
+        >
+          Orlando <span class="text-violet-700 dark:text-blue-500">López</span>
+        </h3>
+      </picture>
+      <aside class="flex flex-col gap-4 ml-6">
+        <div
+          class="flex items-center gap-2 text-violet-700 dark:text-blue-500 text-xl md:text-3xl"
+        >
+          <MailIcon class="size-8 md:size-10" />
+          <h4 class="text-primary/90 dark:text-white/80">
+            orlandodev17@gmail.com
+          </h4>
+        </div>
+        <div
+          class="flex items-center gap-2 text-violet-700 dark:text-blue-500 text-xl md:text-3xl"
+        >
+          <PhoneIcon class="size-8 md:size-10" />
+          <h4 class="text-primary/90 dark:text-white/80">+58 4242860846</h4>
+        </div>
+      </aside>
+    </div>
+  </AnimateContainer>
+  <SocialMedia />
+</article>

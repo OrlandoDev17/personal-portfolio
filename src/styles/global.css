@@ -23,13 +23,80 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant active (&:where(.active, .active *));
 
-.slide-in-top {
-  opacity: 0;
-  transform: translateY(-100px);
-  transition: all 1s ease;
+/* ANIMACIONES */
+
+.a-fade-to-bottom {
+  animation: fade-to-bottom 0.5s ease-in-out;
 }
 
-.slide-in-top.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fade-to-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.a-fade-to-top {
+  animation: fade-to-top 0.5s ease-in-out;
+}
+
+@keyframes fade-to-top {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.a-fade-to-left {
+  animation: fade-to-left 0.5s ease-in-out;
+}
+
+@keyframes fade-to-left {
+  0% {
+    opacity: 0;
+    transform: rotate(-10deg);
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.a-fade-to-right {
+  animation: fade-to-right 0.5s ease-in-out;
+}
+
+@keyframes fade-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.a-fade-scale {
+  animation: fade-scale 0.5s ease-in-out;
+}
+
+@keyframes fade-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

@@ -3,39 +3,47 @@ import GitHubIcon from '../icons/GitHub.astro';
 import LinkedInIcon from '../icons/LinkedIn.astro';
 import WhatsappIcon from '../icons/Whatsapp.astro';
 import MailIcon from '../icons/Mail.astro';
+import AnimateContainer from './AnimateContainer.astro';
 
 const SOCIALMEDIAS = [
   {
     icon: GitHubIcon,
     link: 'https://github.com/OrlandoDev17',
+    delay: 0,
   },
   {
     icon: LinkedInIcon,
     link: 'https://www.linkedin.com/in/orlando-lópez1707',
+    delay: 100,
   },
   {
     icon: WhatsappIcon,
     link: 'https://wa.me/584242860846',
+    delay: 200,
   },
   {
     icon: MailIcon,
     link: 'mailto:orlandodev1707@gmail.com',
+    delay: 300,
   },
 ];
 ---
 
 <div class="flex items-center justify-center space-x-4 mt-2">
   {
-    SOCIALMEDIAS.map(({ icon: Icon, link }) => (
-      <a
-        class="border-2 border-violet-700 dark:border-blue-500 rounded-full p-2 text-violet-700 dark:text-blue-500 
-        hover:bg-violet-700 dark:hover:bg-blue-500 hover:text-white hover:scale-110 transition"
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon class="size-8 md:size-10" />
-      </a>
+    SOCIALMEDIAS.map(({ icon: Icon, link, delay }) => (
+      <AnimateContainer class="flex">
+        <a
+          class="a-fade-to-top border-2 border-violet-700 dark:border-blue-500 rounded-full p-2 text-violet-700 dark:text-blue-500 
+        hover:bg-violet-700 dark:hover:bg-blue-500 hover:text-white hover:scale-110 transition opacity-0"
+          style={`animation-delay: ${delay}ms`}
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon class="size-8 md:size-10" />
+        </a>
+      </AnimateContainer>
     ))
   }
 </div>
